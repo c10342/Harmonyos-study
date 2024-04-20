@@ -1,4 +1,4 @@
-import Work from './Work'
+import Work from './Work/index'
 import My from './My'
 import Message from './Message'
 import AddressBook from './AddressBook'

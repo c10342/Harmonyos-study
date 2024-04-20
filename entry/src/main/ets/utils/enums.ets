@@ -1,4 +1,4 @@
 export enum RouteNameEnum {
-  Login = 'pages/Login/Login',
-  Home = 'pages/Home/Home'
+  Login = 'pages/Login/index',
+  Home = 'pages/Home/index'
 }
