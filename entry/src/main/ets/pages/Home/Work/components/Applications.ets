@@ -1,3 +1,5 @@
+import Title from './Title'
+
 interface ApplicationItem {
   image: ResourceStr,
   label: string
@@ -19,33 +21,11 @@ export default struct Applications {
 
   build() {
     Column() {
-      Row() {
-        Row() {
-          Image($rawfile('work/menu.png'))
-            .width(26)
-            .height(26)
-          Text('应用管理')
-            .margin({ left: 5 })
-            .fontSize(20)
-            .fontWeight(500)
-            .fontColor('#101010')
-        }
-
-        Row() {
-          Text('自定义')
-            .fontColor('#7f6666')
-            .fontSize(16)
-          Image($rawfile('common/arraw_right.png'))
-            .width(20)
-            .height(20)
-        }
-      }
-      .justifyContent(FlexAlign.SpaceBetween)
-      .height(60)
-      .width('100%')
-      .borderWidth({ bottom: 1 })
-      .borderColor({ bottom: '#efefef' })
-      .padding({ left: 10, right: 10 })
+      Title({
+        name: '应用管理',
+        rightText: '自定义',
+        rawfile: 'work/menu.png'
+      })
 
       Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.SpaceBetween }) {
         ForEach(this.applicationList, (item: ApplicationItem) => {
@@ -58,12 +38,17 @@ export default struct Applications {
           }
           .width('25%')
           .padding(10)
+          .onClick(() => {
+            console.log(item.label)
+          })
         })
       }
     }
     .width('94%')
-    .offset({ y: -80 })
     .backgroundColor(Color.White)
     .borderRadius(10)
+    // offset还会占据原来的位置
+    // .offset({ y: -80 })
+    .margin({ top: -80 })
   }
 }
