@@ -32,7 +32,7 @@ export class LeaveCardItem {
 
 
 // 根据申请状态返回申请结果文字
-const getLabel = (status: number) => {
+export const getLabel = (status: number) => {
   switch (status) {
     case 1:
       return '待审批'
@@ -45,7 +45,7 @@ const getLabel = (status: number) => {
   }
 }
 // 根据申请状态返回对应的颜色值
-const getColor = (status: number) => {
+export const getColor = (status: number) => {
   switch (status) {
     case 1:
       return '#ff5f35'

@@ -1,5 +1,7 @@
 import LeaveCard, { LeaveCardItem } from '../../../components/LeaveCard'
 import { ListDataSource } from '../../../utils/ListDataSource';
+import router from '@ohos.router';
+import { RouteNameEnum } from '../../../utils/enums';
 
 @Component
 export default struct TabList {
@@ -15,7 +17,6 @@ export default struct TabList {
         createTime: '2024-4-20 16:50:30',
         id: Math.random().toString(32).slice(-9)
       }))
-
     }
   }
 
@@ -25,6 +26,13 @@ export default struct TabList {
         ListItem() {
           LeaveCard({
             data: item
+          }).onClick(() => {
+            router.pushUrl({
+              url: RouteNameEnum.LeaveDetail,
+              params: {
+                leaveId: item.id
+              }
+            })
           })
         }
       }, (item: LeaveCardItem) => item.id)
