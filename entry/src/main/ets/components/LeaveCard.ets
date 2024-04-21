@@ -101,5 +101,6 @@ export default struct LeaveCard {
     .padding({ top: 20, bottom: 20, left: 10, right: 10 })
     .borderWidth({ bottom: 1 })
     .borderColor({ bottom: '#efefef' })
+    .backgroundColor(Color.White)
   }
 }
