@@ -7,7 +7,7 @@ interface ApplicationItem {
 
 // 应用管理
 @Component
-export default struct Applications {
+export default struct ApplicationList {
   @State applicationList: ApplicationItem[] = [
     { image: $rawfile('work/process.png'), label: "请假申请" },
     { image: $rawfile('work/clock.png'), label: "考勤打卡" },

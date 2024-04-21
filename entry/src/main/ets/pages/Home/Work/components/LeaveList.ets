@@ -2,7 +2,7 @@ import LeaveCard, { LeaveCardItem } from '../../../../components/LeaveCard'
 import Title from './Title'
 
 @Component
-export default struct Leaves {
+export default struct LeaveList {
   @State leaveList: LeaveCardItem[] = [
     {
       status: 1,

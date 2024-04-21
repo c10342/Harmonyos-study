@@ -5,7 +5,7 @@ interface TipItem {
 
 
 @Component
-export default struct Tips {
+export default struct TipList {
   @State tipList: Array<TipItem> = [
     { label: '待审批', value: 15 },
     { label: '会议提示', value: 2 },

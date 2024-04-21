@@ -1,28 +1,27 @@
-import Applications from './components/Applications'
+import ApplicationList from './components/ApplicationList'
 import Header from './components/Header'
-import Leaves from './components/Leaves'
-import Tips from './components/Tips'
+import LeaveList from './components/LeaveList'
+import TipList from './components/TipList'
 
 
 @Preview
 @Component
 export default struct Work {
-
-
   build() {
     Column() {
       Header()
       List() {
         // 提示信息
         ListItem() {
-          Tips()
+          TipList()
         }
         // 应用管理
         ListItem() {
-          Applications()
+          ApplicationList()
         }
-        ListItem(){
-          Leaves()
+
+        ListItem() {
+          LeaveList()
         }
       }
       .layoutWeight(1)
