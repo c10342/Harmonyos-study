@@ -1,13 +1,13 @@
 import LeaveCard, { LeaveCardItem } from '../../../components/LeaveCard'
+import { ListDataSource } from '../../../utils/ListDataSource';
 
 @Component
 export default struct TabList {
-  @State list: LeaveCardItem[] = []
+  data: ListDataSource<LeaveCardItem> = new ListDataSource<LeaveCardItem>();
 
   aboutToAppear() {
-    console.log('aboutToAppear')
     for (let index = 0; index < 10; index++) {
-      this.list.push(new LeaveCardItem({
+      this.data.pushData(new LeaveCardItem({
         status: index % 4 + 1,
         endTime: '2024-4-22 16:50:30',
         startTime: '2024-4-20 16:50:30',
@@ -20,13 +20,14 @@ export default struct TabList {
   }
 
   build() {
-    Column() {
-      // ForEach(this.list, (item: LeaveCardItem) => {
-      //   LeaveCard({
-      //     data: item
-      //   })
-      // }, (item: LeaveCardItem) => item.id)
-      // LazyForEach()
+    List() {
+      LazyForEach(this.data, (item: LeaveCardItem) => {
+        ListItem() {
+          LeaveCard({
+            data: item
+          })
+        }
+      }, (item: LeaveCardItem) => item.id)
     }
     .width('100%')
     .height('100%')
