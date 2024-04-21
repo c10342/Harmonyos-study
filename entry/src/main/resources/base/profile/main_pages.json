@@ -2,6 +2,7 @@
   "src": [
     "pages/Index",
     "pages/Login/index",
-    "pages/Home/index"
+    "pages/Home/index",
+    "pages/Leave/ApplyList"
   ]
 }

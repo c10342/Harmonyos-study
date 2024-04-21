@@ -3,7 +3,8 @@ export default struct Title {
   @Prop name: string;
   @Prop rightText: string;
   @Prop rawfile: string;
-  // clickCbs: Array<Function> = []
+
+  onRightClick: (() => any) | null = null;
 
   build() {
     Row() {
@@ -27,8 +28,7 @@ export default struct Title {
           .height(20)
       }
       .onClick(() => {
-        // const cbs = this.clickCbs.slice();
-        // cbs.forEach(cb => cb())
+        this.onRightClick?.();
       })
     }
     .justifyContent(FlexAlign.SpaceBetween)
@@ -38,11 +38,4 @@ export default struct Title {
     .borderColor({ bottom: '#efefef' })
     .padding({ left: 10, right: 10 })
   }
-
-  // onRightClick(action: () => any) {
-  //   const index = this.clickCbs.findIndex(fn => fn === action);
-  //   if (index === -1) {
-  //     this.clickCbs.push(action)
-  //   }
-  // }
 }

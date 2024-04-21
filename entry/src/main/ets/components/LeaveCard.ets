@@ -1,13 +1,33 @@
 import dayjs from 'dayjs'
 
-export interface LeaveCardItem {
+// export interface LeaveCardItem {
+//   // 状态
+//   status: number
+//   startTime: string
+//   endTime: string
+//   createTime: string
+//   applyDay: number,
+//   id: string
+// }
+
+@Observed
+export class LeaveCardItem {
   // 状态
   status: number
   startTime: string
   endTime: string
   createTime: string
-  applyDay: number,
+  applyDay: number
   id: string
+
+  constructor(object: LeaveCardItem) {
+    this.status = object.status ?? 1
+    this.startTime = object.startTime ?? ''
+    this.endTime = object.endTime ?? ''
+    this.createTime = object.createTime?? ''
+    this.applyDay = object.applyDay ?? 0
+    this.id = object.id ?? ''
+  }
 }
 
 
@@ -40,7 +60,7 @@ const getColor = (status: number) => {
 
 @Component
 export default struct LeaveCard {
-  @State data: LeaveCardItem = null;
+  @ObjectLink data: LeaveCardItem;
 
   build() {
     Column() {
