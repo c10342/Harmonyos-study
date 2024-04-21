@@ -3,7 +3,8 @@
     "pages/Index",
     "pages/Login/index",
     "pages/Home/index",
-    "pages/Leave/ApplyList",
-    "pages/Leave/ApplyDetail"
+    "pages/Leave/LeaveList",
+    "pages/Leave/LeaveDetail",
+    "pages/Leave/AddLeave"
   ]
 }

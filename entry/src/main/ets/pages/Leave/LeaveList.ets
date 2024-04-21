@@ -9,7 +9,7 @@ interface TabItem {
 
 @Entry
 @Component
-struct ApplyList {
+struct LeaveList {
   tabList: TabItem[] = [
     { label: "全部", value: 0 },
     { label: "人事管理", value: 1 },

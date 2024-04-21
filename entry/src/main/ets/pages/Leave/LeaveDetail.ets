@@ -4,7 +4,7 @@ import router from '@ohos.router'
 
 @Entry
 @Component
-struct ApplyDetail {
+struct LeaveDetail {
   @State leaveId: string = ''
 
   aboutToAppear() {
